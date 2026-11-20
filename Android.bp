@@ -1,0 +1,46 @@
+// SPDX-License-Identifier: MIT
+
+package {
+    default_applicable_licenses: ["external_json-c_license"],
+}
+
+license {
+    name: "external_json-c_license",
+    visibility: [":__subpackages__"],
+    license_kinds: ["SPDX-license-identifier-MIT"],
+    license_text: ["COPYING"],
+}
+
+cc_library_shared {
+    name: "libjson",
+    vendor: true,
+    srcs: [
+        "arraylist.c",
+        "debug.c",
+        "json_c_version.c",
+        "json_object.c",
+        "json_object_iterator.c",
+        "json_tokener.c",
+        "json_util.c",
+        "linkhash.c",
+        "printbuf.c",
+        "random_seed.c",
+        "strerror_override.c",
+    ],
+    local_include_dirs: [
+        "android",
+        "android/include",
+    ],
+    cflags: [
+        "-D_GNU_SOURCE",
+        "-Wall",
+        "-Wcast-qual",
+        "-Werror",
+        "-Wextra",
+        "-Wno-error=deprecated-declarations",
+        "-Wno-unused-parameter",
+        "-Wstrict-prototypes",
+        "-Wwrite-strings",
+    ],
+    ldflags: ["-Wl,-Bsymbolic-functions"],
+}

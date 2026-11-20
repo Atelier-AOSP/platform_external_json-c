@@ -1,0 +1,15 @@
+name: "json-c"
+description: "A JSON implementation in C."
+third_party {
+  license_type: NOTICE
+  last_upgrade_date {
+    year: 2026
+    month: 11
+    day: 20
+  }
+  identifier {
+    type: "Git"
+    value: "https://github.com/json-c/json-c"
+    version: "1b72e9a07fc3cb3c1a423658f6ec548100144813"
+  }
+}
